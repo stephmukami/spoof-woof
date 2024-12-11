@@ -6,7 +6,6 @@ import io
 import piexif
 import argparse
 import sys
-from PIL import Image
 
 
 def image_to_bytes(image, exif_data=None):
@@ -44,8 +43,8 @@ def modify_lsb(image):
     Modifies the least significant bit (LSB) of image pixels.
     """
     img_array = np.array(image, dtype=np.uint8)
-    noise = np.random.randint(0, 2, img_array.shape, dtype=np.uint8)  # Random 0 or 1 noise
-    modified_array = (img_array & 0xFE) | noise  # Clear the LSB and set it to noise
+    noise = np.random.randint(0, 2, img_array.shape, dtype=np.uint8)
+    modified_array = (img_array & 0xFE) | noise  # Clear the LSB and put the noise instead
     modified_image = PIL.Image.fromarray(modified_array, mode=image.mode)
     return modified_image
 
@@ -70,7 +69,7 @@ def modify_exif_metadata(image):
         exif_data = image.info.get('exif', b'')
         exif_dict = piexif.load(exif_data) if exif_data else {"0th": {}, "Exif": {}, "GPS": {}, "Interop": {}, "1st": {}, "thumbnail": None}
         
-        # Modifications to be made to the EXIF data
+        # Modify the EXIF data randomly
         modifications = [
             ('0th', piexif.ImageIFD.XPComment, str(random.random()).encode('utf-16')),
             ('Exif', piexif.ExifIFD.UserComment, f"Modification {random.randint(0, 1000)}".encode('utf-16'))
@@ -90,7 +89,7 @@ def modify_exif_metadata(image):
             print(f"Error modifying EXIF: {e}")
             error_logged = True
         return None
-
+ 
 def perturb_image(image, temperature):
     """
     Modifies the image using multiple strategies.
@@ -115,7 +114,6 @@ def simulated_annealing(image, desired_prefix, temperature=1.0, cooling_rate=0.9
     current_image = original_image
     current_temperature = temperature
     iteration = 0
-    error_logged = False
 
     while iteration < max_iterations:
         iteration += 1
@@ -125,7 +123,7 @@ def simulated_annealing(image, desired_prefix, temperature=1.0, cooling_rate=0.9
         modified_hash = calculate_hash(modified_image_bytes)
 
         if modified_hash.startswith(target_prefix):
-            print(f"Match found after {iteration} iterations!")
+            print(f"Match found after {iteration} iteration(s)!")
             print(f"Original hash: {original_hash}")
             print(f"Target prefix: {target_prefix}")
             print(f"Final hash: {modified_hash}")
@@ -133,33 +131,48 @@ def simulated_annealing(image, desired_prefix, temperature=1.0, cooling_rate=0.9
 
         current_temperature *= cooling_rate
 
-    print(f"No match found after {max_iterations} iterations.")
+    print(f"No match found after {max_iterations} iteration(s).")
     print(f"Original hash: {original_hash}")
     print(f"Target prefix: {target_prefix}")
     print(f"Final hash: {modified_hash}")
     return current_image
 
+def process_image(hexstring, input_image_path, output_image_path):
+    """
+    Core logic for processing the image.
+    """
+    if not hexstring.startswith('0x'):
+        raise ValueError("Hexstring must start with 0x")
+    try:
+        int(hexstring, 16)
+    except ValueError:
+        raise ValueError("Invalid hexstring, use symbols 0-9, A-F")
+
+    try:
+        original_image = PIL.Image.open(input_image_path)
+        if original_image.format not in ('JPEG', 'JPG'):
+            raise ValueError("Only JPG images are supported. Please provide a JPG file.")
+
+        result_image = simulated_annealing(original_image, hexstring)
+        result_image.save(output_image_path)
+        return f"Modified image saved as {output_image_path}"
+
+    except Exception as e:
+        raise RuntimeError(f"Error processing image: {e}")
 
 def main():
     parser = argparse.ArgumentParser(description="Spoof an image hash using simulated annealing")
     parser.add_argument('hexstring', type=str, help="Desired hex prefix for the image hash")
     parser.add_argument('input_image', type=str, help="Path to the input image")
     parser.add_argument('output_image', type=str, help="Path to save the modified image")
-
     args = parser.parse_args()
 
     try:
-        original_image = PIL.Image.open(args.input_image)
-
-        result_image = simulated_annealing(original_image, args.hexstring)
-
-        result_image.save(args.output_image)
-        print(f"Modified image saved as {args.output_image}")
-
+        message = process_image(args.hexstring, args.input_image, args.output_image)
+        print(message)
     except Exception as e:
         print(f"Error: {e}")
         sys.exit(1)
-
-
+        
 if __name__ == "__main__":
     main()

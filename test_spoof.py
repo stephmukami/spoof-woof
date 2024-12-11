@@ -52,7 +52,6 @@ def test_simulated_annealing_returns_image():
                 main()  
 
                 mock_annealing.assert_called_once_with(mock_image, "0x123456f")
-
 # Test for invalid image path
 def test_invalid_image_path():
     with patch("sys.argv", ["spoof.py", "0x1234", "non_existent_file.jpg", "output.jpg"]):
