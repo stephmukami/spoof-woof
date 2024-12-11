@@ -6,6 +6,7 @@ import io
 import piexif
 import argparse
 import sys
+from PIL import Image
 
 
 def image_to_bytes(image, exif_data=None):
@@ -59,33 +60,36 @@ def add_noise(image):
     return PIL.Image.fromarray(np_image)
 
 
-def modify_exif_metadata(original_image):
+def modify_exif_metadata(image):
     """
     Modifies EXIF metadata to include random comments.
     """
     error_logged = False
     try:
-        exif_dict = piexif.load(original_image.info.get('exif', b''))
-        if not exif_dict:
-            exif_dict = {"0th": {}, "Exif": {}, "GPS": {}, "Interop": {}, "1st": {}, "thumbnail": None}
-
+        # Extract EXIF data from the image object directly or initialize an object for EXIF with some common fields
+        exif_data = image.info.get('exif', b'')
+        exif_dict = piexif.load(exif_data) if exif_data else {"0th": {}, "Exif": {}, "GPS": {}, "Interop": {}, "1st": {}, "thumbnail": None}
+        
+        # Modifications to be made to the EXIF data
         modifications = [
             ('0th', piexif.ImageIFD.XPComment, str(random.random()).encode('utf-16')),
             ('Exif', piexif.ExifIFD.UserComment, f"Modification {random.randint(0, 1000)}".encode('utf-16'))
         ]
-
+        
+        # Apply the modifications
         for ifd, tag, value in modifications:
             if ifd in exif_dict:
                 exif_dict[ifd][tag] = value
 
+        # Dump the EXIF data and return it
         exif_bytes = piexif.dump(exif_dict)
         return exif_bytes
+
     except Exception as e:
         if not error_logged:
             print(f"Error modifying EXIF: {e}")
             error_logged = True
         return None
-
 
 def perturb_image(image, temperature):
     """
@@ -99,7 +103,7 @@ def perturb_image(image, temperature):
     return noise_modified_image, exif_data
 
 
-def simulated_annealing(image, desired_prefix, temperature=1.0, cooling_rate=0.99, max_iterations=2):
+def simulated_annealing(image, desired_prefix, temperature=1.0, cooling_rate=0.99, max_iterations=1):
     """
     Applies simulated annealing to modify an image until its hash matches a desired prefix.
     """
