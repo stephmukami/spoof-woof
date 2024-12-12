@@ -61,19 +61,19 @@ This solution is inspired by the [**Birthday Problem**](https://en.wikipedia.org
 
 ```plaintext
 spoof-woof/
-|--- __pycache__
+|--- __pycache__ - Stores compiled bytecode files (.pyc) for Python modules.
 |--- bin/
 |--- lib/ - Stores the site-packages and standard library for the virtual environment.
 |--- .gitignore
 |--- .README.md
-|--- .altered.jpg
+|--- .altered.jpg - final output image, can be overwritten
 |--- lib64 - A symbolic link to lib on 64-bit systems
-|--- original.jpg
+|--- original.jpg - input image
 |--- pyvenv.cfg -  Configuration file for the virtual environment.
 
-|--- requirements.txt
-|--- spoof.py
-|--- test_spoof.py
+|--- requirements.txt - stores project dependencies
+|--- spoof.py - main python file
+|--- test_spoof.py -test
 ```
 
 ## How To Use
