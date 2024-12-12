@@ -9,7 +9,6 @@
   <a href="#background-ideation">Background and Ideation</a> •
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
-  <a href="#code-explanation">Code Explanation</a> •
   <a href="#tech-skills">Technical Skills Gained</a> •
   <a href="#license">License</a>
 </p>
@@ -78,7 +77,7 @@ $ python spoof.py 0x24 original.jpg altered.jpg
 
 
 ```
-## Code Explanation
+
 > **Note**
 > You can interact with the program via a UI built using streamlit, [Streamlit App](https://stephmukami-streamlit-spoof-streamlitmain-mbkzqu.streamlit.app/)
 
@@ -90,6 +89,8 @@ MIT
 ## Technical Skills Gained
 - Incorporating third-party Python libraries like piexif or Pillow for image manipulation.
 - Creating and deploying apps using UI libraries like Streamlit
-- Debugging Streamlit-specific issues.
+- Debugging Streamlit-specific issues and other errors.
+- Testing using PyTest
 - Problem Solving
+
 
