@@ -90,8 +90,9 @@ sophisticated search optimization techniques like [Genetic Algorithms](https://e
 MIT
 ---
 ## DEMO
+
 <div align='center'>
-    <img src="https://github.com/stephmukami/streamlit-spoof/blob/master/vs-code-demo.mp4" alt="gif page" width="150" height="150">
+    <iframe>src="https://github.com/stephmukami/streamlit-spoof/blob/master/vs-code-demo.mp4" alt="gif page" width="150" height="150"</iframe>
       <img src="https://github.com/stephmukami/streamlit-spoof/blob/master/streamlit-demo.mp4" alt="gif page" width="150" height="150">
   
 </div>
