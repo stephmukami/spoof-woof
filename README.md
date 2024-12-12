@@ -14,8 +14,8 @@
 </p>
 <div align="center">
   
-  <img src="https://github.com/stephmukami/kikwetu_store/blob/master/project_pictures/kikwet_2.PNG" alt="sign up page" width="400">
-  <img src="https://github.com/stephmukami/kikwetu_store/blob/master/project_pictures/kikwetu_1.PNG" alt="checkout page" width="400">
+  <img src="https://media.giphy.com/media/mGLOwWFI72JQvxsYaS/giphy.gif?cid=ecf05e47hiuuxng4pbn3yyelv8kho5x7avvq6ytx3bq38yj1&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="gif page" width="400">
+  
 </div>
 
 ## Background and Ideation
