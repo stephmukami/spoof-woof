@@ -6,9 +6,10 @@
 
 <h4 align="center">A solution for image hash spoofing.</h4>
 <p align="center">
-  <a href="#how-to-use">Background and Ideation</a> •
+  <a href="#background-ideation">Background and Ideation</a> •
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
+  <a href="#code-explanation">Code Explanation</a> •
   <a href="#tech-skills">Technical Skills Gained</a> •
   <a href="#license">License</a>
 </p>
@@ -19,6 +20,40 @@
 </div>
 
 ## Background and Ideation
+# **Solution Overview**
+
+This solution is inspired by the **Birthday Problem**, a probability puzzle that demonstrates how the likelihood of a collision increases counterintuitively with more data points. The goal of this challenge is to process an image into a hash and find a collision where two different inputs produce the same hash, such that the resulting image remains visually unchanged when the hash is reversed.
+
+## **Approach**
+1. **Hash Collision**: The program aims to modify the hash such that it matches the desired prefix with minimal visual changes to the image. This is achieved by altering non-visible components like:
+   - **EXIF Data**: Metadata changes that don't affect the image visually.
+   - **Least Significant Bits (LSBs)**: Slight pixel alterations that are imperceptible.
+   - **Compression Artifacts**: Leveraging the JPEG format's lossy compression.
+
+2. **Trade-offs**:
+   - **Search Space Size**: Computational complexity grows exponentially with prefix length.
+   - **Computation Time**: The proof-of-concept performs one iteration to demonstrate feasibility.
+   - **Visual Fidelity**: Ensuring changes remain imperceptible.
+
+3. **Simulated Annealing**: This optimization technique explores the search space by:
+   - Initially making broader, random changes.
+   - Gradually narrowing modifications as it approaches the desired hash.
+
+4. **Theoretical Basis**:
+   - Using SHA-256 as the hash algorithm ensures:
+     - Moderate speed.
+     - Strong collision resistance.
+     - A manageable search space (e.g., 256 iterations for a 2-character prefix).
+
+## **Key Features**
+- **JPEG Format**: Chosen for its tolerance to imperceptible changes due to lossy compression.
+- **Metadata Editing**: Easy manipulation of EXIF data to tweak the hash.
+- **Proof of Concept**: Demonstrates collision creation with minimal runtime by performing a single iteration.
+
+---
+
+This solution highlights the trade-offs and challenges of balancing computational complexity, search space, and visual fidelity while achieving hash collisions effectively.
+
 
 ## Key Features
 
@@ -50,7 +85,7 @@ $ python spoof.py 0x24 original.jpg altered.jpg
 
 
 ```
-
+## Code Explanation
 > **Note**
 > You can interact with the program via a UI built using streamlit, [Streamlit App](https://stephmukami-streamlit-spoof-streamlitmain-mbkzqu.streamlit.app/)
 
@@ -60,6 +95,8 @@ MIT
 
 ---
 ## Technical Skills Gained
-- Array Manipulation
-- State management
-- Conditional rendering
+- Incorporating third-party Python libraries like piexif or Pillow for image manipulation.
+- Creating and deploying apps using UI libraries like Streamlit
+- Debugging Streamlit-specific issues.
+- Problem Solving
+
