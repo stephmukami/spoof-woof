@@ -91,11 +91,12 @@ MIT
 ---
 ## DEMO
 
-<div align='center'>
-    <iframe src="https://github.com/stephmukami/streamlit-spoof/blob/master/vs-code-demo.mp4" alt="gif page" width="150" height="150"> </iframe>
-      <img src="https://github.com/stephmukami/streamlit-spoof/blob/master/streamlit-demo.mp4" alt="gif page" width="150" height="150">
-  
+
+   <div align="center">
+  <iframe width="560" height="315" src="https://github.com/stephmukami/streamlit-spoof/blob/master/vs-code-demo.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
+
+ 
 ---
 ## Technical Skills Gained
 - Incorporating third-party Python libraries like piexif or Pillow for image manipulation.
