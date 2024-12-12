@@ -93,7 +93,8 @@ MIT
 
 
    <div align="center">
-  <iframe width="560" height="315" src="https://github.com/stephmukami/streamlit-spoof/blob/master/vs-code-demo.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  ![VS Code Demo](https://github.com/stephmukami/streamlit-spoof/blob/master/vs-code-demo.gif)
+
 </div>
 
  
