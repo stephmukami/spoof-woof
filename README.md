@@ -64,8 +64,8 @@ spoof-woof/
 |--- __pycache__ - Stores compiled bytecode files (.pyc) for Python modules.
 |--- bin/
 |--- lib/ - Stores the site-packages and standard library for the virtual environment.
-|--- .gitignore
-|--- .README.md
+|--- .gitignore - Ommits files/folders
+|--- .README.md - project background and guide
 |--- .altered.jpg - final output image, can be overwritten
 |--- lib64 - A symbolic link to lib on 64-bit systems
 |--- original.jpg - input image
