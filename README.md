@@ -9,6 +9,7 @@
   <a href="#background-ideation">Background and Ideation</a> •
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
+  <a href="#limitations">Limitations</a> •
   <a href="#tech-skills">Technical Skills Gained</a> •
   <a href="#license">License</a>
 </p>
@@ -79,8 +80,11 @@ $ python spoof.py 0x24 original.jpg altered.jpg
 ```
 
 > **Note**
-> You can interact with the program via a UI built using streamlit, [Streamlit App](https://stephmukami-streamlit-spoof-streamlitmain-mbkzqu.streamlit.app/)
+> You can interact with the program via a UI built using streamlit, [Streamlit App](https://stephmukami-streamlit-spoof-streamlitmain-mbkzqu.streamlit.app/) 🎉
 
+## Limitations
+This solution **does not find the exact hash match for an arbitrary hexstring prefix** as it only undergoes one iteration as a proof of concept and also considering computational complexity. An exact match could be found by increasing the number of iterations or using more
+sophisticated search optimization techniques like [Genetic Algorithms](https://en.wikipedia.org/wiki/Genetic_algorithm#:~:text=In%20computer%20science%20and%20operations,hyperparameter%20optimization%2C%20and%20causal%20inference.) and other machine learning approaches.
 ## License
 
 MIT
