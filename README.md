@@ -63,13 +63,14 @@ This solution is inspired by the [**Birthday Problem**](https://en.wikipedia.org
 spoof-woof/
 |--- __pycache__
 |--- bin/
-|--- lib/
+|--- lib/ - Stores the site-packages and standard library for the virtual environment.
 |--- .gitignore
 |--- .README.md
 |--- .altered.jpg
-|--- lib64
+|--- lib64 - A symbolic link to lib on 64-bit systems
 |--- original.jpg
-|--- pyvenv.cfg
+|--- pyvenv.cfg -  Configuration file for the virtual environment.
+
 |--- requirements.txt
 |--- spoof.py
 |--- test_spoof.py
