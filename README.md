@@ -76,9 +76,12 @@ spoof-woof/
 |--- test_spoof.py -test
 ```
 ### Main modules
-**Image Input and Saving** - Handles processing images input via command-line arguments,validating the other inputs passed and saving the output image.
-**Image Modification** - Contains methods used to modify the input image including modifying insignifcant bits,adding small amounts of noise, modyifing compression artifacts and EXIF data 
-**Search (Simulated Annealing)** - Shows the search process which involves appending the target prefix to the image hash and applying image modifications to match the desired hash.The algorithm starts with a high level of randomness (high temperature) to explore the search space broadly.As the search progresses and approaches the desired hash, the randomness is gradually reduced (cooling), refining the results.
+####**Image Input and Saving** 
+- Handles processing images input via command-line arguments,validating the other inputs passed and saving the output image.
+####**Image Modification**
+  - Contains methods used to modify the input image including modifying insignifcant bits,adding small amounts of noise, modyifing compression artifacts and EXIF data 
+####**Search (Simulated Annealing)**
+- Shows the search process which involves appending the target prefix to the image hash and applying image modifications to match the desired hash.The algorithm starts with a high level of randomness (high temperature) to explore the search space broadly.As the search progresses and approaches the desired hash, the randomness is gradually reduced (cooling), refining the results.
 
 
 ## How To Use
