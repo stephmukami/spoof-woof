@@ -94,6 +94,7 @@ MIT
 
    <div align="center">
   ![VS Code Demo](https://github.com/stephmukami/streamlit-spoof/blob/master/vs-code-demo.gif)
+  <img src= "https://github.com/stephmukami/streamlit-spoof/blob/master/vs-code-demo.gif)" alt="gif page" width="150" height="150">
 
 </div>
 
