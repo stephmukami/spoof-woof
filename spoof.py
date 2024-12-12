@@ -90,7 +90,7 @@ def modify_exif_metadata(image):
             error_logged = True
         return None
  
-def perturb_image(image, temperature):
+def apply_modification(image, temperature):
     """
     Modifies the image using multiple strategies.
     """
@@ -117,7 +117,7 @@ def simulated_annealing(image, desired_prefix, temperature=1.0, cooling_rate=0.9
 
     while iteration < max_iterations:
         iteration += 1
-        modified_image, exif_data = perturb_image(current_image, current_temperature)
+        modified_image, exif_data = apply_modification(current_image, current_temperature)
 
         modified_image_bytes = image_to_bytes(modified_image, exif_data=exif_data)
         modified_hash = calculate_hash(modified_image_bytes)
@@ -135,7 +135,7 @@ def simulated_annealing(image, desired_prefix, temperature=1.0, cooling_rate=0.9
     print(f"Original hash: {original_hash}")
     print(f"Target prefix: {target_prefix}")
     print(f"Final hash: {modified_hash}")
-    return current_image
+    return modified_image
 
 def process_image(hexstring, input_image_path, output_image_path):
     """
