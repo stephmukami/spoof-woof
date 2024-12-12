@@ -56,6 +56,25 @@ This solution is inspired by the [**Birthday Problem**](https://en.wikipedia.org
 - Turns final hash into output image
 - Saves modified image as output
 
+##Folder Structure
+## Folder Structure
+
+```plaintext
+spoof-woof/
+|--- __pycache__
+|--- bin/
+|--- lib/
+|--- .gitignore
+|--- .README.md
+|--- .altered.jpg
+|--- lib64
+|--- original.jpg
+|--- pyvenv.cfg
+|--- requirements.txt
+|--- spoof.py
+|--- test_spoof.py
+```
+
 ## How To Use
 
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Python](https://www.python.org/downloads/)  installed on your computer. From your command line:
