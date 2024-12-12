@@ -28,7 +28,8 @@ This solution is inspired by the [**Birthday Problem**](https://en.wikipedia.org
 1. **Hash Collision**: The program aims to modify the hash such that it matches the desired prefix with minimal visual changes to the image. This is achieved by altering non-visible components like:
    - **EXIF Data**: Metadata changes that don't affect the image visually.
    - **Least Significant Bits (LSBs)**: Slight pixel alterations that are imperceptible.
-   - **Compression Artifacts**: Leveraging the JPEG format's lossy compression.
+   - **Compression Artifacts**: ie the visual distorions present when an image is compressed , leveraging the JPEG format's lossy compression.
+   - **Adding Noise**: Minimal Gaussian noise was added to slightly modify the image
 
 2. **Trade-offs Considered**:
    - **Search Space Size**: Computational complexity grows exponentially with prefix length.
@@ -57,7 +58,7 @@ This solution is inspired by the [**Birthday Problem**](https://en.wikipedia.org
 - Saves modified image as output
 
 
-## Folder Structure
+### Folder Structure
 
 ```plaintext
 spoof-woof/
@@ -70,11 +71,15 @@ spoof-woof/
 |--- lib64 - A symbolic link to lib on 64-bit systems
 |--- original.jpg - input image
 |--- pyvenv.cfg -  Configuration file for the virtual environment.
-
 |--- requirements.txt - stores project dependencies
 |--- spoof.py - main python file
 |--- test_spoof.py -test
 ```
+### Main modules
+**Image Input and Saving** - Handles processing images input via command-line arguments,validating the other inputs passed and saving the output image.
+**Image Modification** - Contains methods used to modify the input image including modifying insignifcant bits,adding small amounts of noise, modyifing compression artifacts and EXIF data 
+**Search (Simulated Annealing)** - Shows the search process which involves appending the target prefix to the image hash and applying image modifications to match the desired hash.The algorithm starts with a high level of randomness (high temperature) to explore the search space broadly.As the search progresses and approaches the desired hash, the randomness is gradually reduced (cooling), refining the results.
+
 
 ## How To Use
 
