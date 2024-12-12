@@ -91,10 +91,10 @@ MIT
 ---
 ## DEMO
 
+<div align="center">
+<img src= "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHVxZmk0bG94NDhhZWpvbXQ4eHo3eXJlOHNwczMzZm54N3RyZWR3ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/z1C0XCq8tCkLtnGEg1/giphy.gif" alt="gif page" width="400" height="400">
 
-   <div align="center">
-![VS Code Demo](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHVxZmk0bG94NDhhZWpvbXQ4eHo3eXJlOHNwczMzZm54N3RyZWR3ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/z1C0XCq8tCkLtnGEg1/giphy.gif)
-  <img src= "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHVxZmk0bG94NDhhZWpvbXQ4eHo3eXJlOHNwczMzZm54N3RyZWR3ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/z1C0XCq8tCkLtnGEg1/giphy.gif" alt="gif page" width="150" height="150">
+<img src= "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzhiZ20wdHhjeHR6MWt1dDRrcmc1azlhazY5NzQ2a3Jic2p5eDFneSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ekHNvjgIW64tucKsVH/giphy.gif" alt="gif page" width="400" height="400">
 
 </div>
 
