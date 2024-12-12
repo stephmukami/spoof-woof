@@ -88,7 +88,13 @@ sophisticated search optimization techniques like [Genetic Algorithms](https://e
 ## License
 
 MIT
-
+---
+## DEMO
+<div align='center'>
+    <img src="https://github.com/stephmukami/streamlit-spoof/blob/master/vs-code-demo.mp4" alt="gif page" width="150" height="150">
+      <img src="https://github.com/stephmukami/streamlit-spoof/blob/master/streamlit-demo.mp4" alt="gif page" width="150" height="150">
+  
+</div>
 ---
 ## Technical Skills Gained
 - Incorporating third-party Python libraries like piexif or Pillow for image manipulation.
