@@ -20,7 +20,6 @@
 </div>
 
 ## Background and Ideation
-![hippo](https://media3.giphy.com/media/aUovxH8Vf9qDu/giphy.gif)
 ### **Solution Overview**
 
 This solution is inspired by the [**Birthday Problem**](https://en.wikipedia.org/wiki/Birthday_problem), a probability puzzle that demonstrates how the likelihood of a collision increases counterintuitively with more data points. The goal of this solution is to process an image into a hash and find a collision where two different inputs produce the same hash, such that the resulting image remains visually unchanged when the hash is reversed.
@@ -94,7 +93,7 @@ MIT
 
 
    <div align="center">
-  ![VS Code Demo](https://github.com/stephmukami/streamlit-spoof/blob/master/vs-code-demo.gif)
+  ![VS Code Demo](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHVxZmk0bG94NDhhZWpvbXQ4eHo3eXJlOHNwczMzZm54N3RyZWR3ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/z1C0XCq8tCkLtnGEg1/giphy.gif)
   <img src= "https://github.com/stephmukami/streamlit-spoof/blob/master/vs-code-demo.gif)" alt="gif page" width="150" height="150">
 
 </div>
