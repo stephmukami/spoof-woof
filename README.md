@@ -22,7 +22,7 @@
 ## Background and Ideation
 ### **Solution Overview**
 
-This solution is inspired by the [**Birthday Problem**](https://en.wikipedia.org/wiki/Birthday_problem), a probability puzzle that demonstrates how the likelihood of a collision increases counterintuitively with more data points. The goal of this solution is to process an image into a hash and find a collision where two different inputs produce the same hash, such that the resulting image remains visually unchanged when the hash is reversed.
+This solution is inspired by the [**Birthday Problem**](https://en.wikipedia.org/wiki/Birthday_problem) , a probability puzzle that demonstrates how the likelihood of a collision increases counterintuitively with more data points. The goal of this solution is to process an image into a hash and find a collision where two different inputs produce the same hash, such that the resulting image remains visually unchanged when the hash is reversed.
 
 #### **Approach**
 1. **Hash Collision**: The program aims to modify the hash such that it matches the desired prefix with minimal visual changes to the image. This is achieved by altering non-visible components like:
@@ -78,8 +78,10 @@ spoof-woof/
 ### Main modules
 **Image Input and Saving** 
 - Handles processing images input via command-line arguments,validating the other inputs passed and saving the output image.
+
 **Image Modification**
-  - Contains methods used to modify the input image including modifying insignifcant bits,adding small amounts of noise, modyifing compression artifacts and EXIF data 
+- Contains methods used to modify the input image including modifying insignifcant bits,adding small amounts of noise, modyifing compression artifacts and EXIF data 
+
 **Search (Simulated Annealing)**
 - Shows the search process which involves appending the target prefix to the image hash and applying image modifications to match the desired hash.The algorithm starts with a high level of randomness (high temperature) to explore the search space broadly.As the search progresses and approaches the desired hash, the randomness is gradually reduced (cooling), refining the results.
 
