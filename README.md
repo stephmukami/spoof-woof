@@ -56,7 +56,7 @@ This solution is inspired by the [**Birthday Problem**](https://en.wikipedia.org
 - Turns final hash into output image
 - Saves modified image as output
 
-##Folder Structure
+
 ## Folder Structure
 
 ```plaintext
