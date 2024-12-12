@@ -20,39 +20,32 @@
 </div>
 
 ## Background and Ideation
-# **Solution Overview**
+### **Solution Overview**
 
-This solution is inspired by the **Birthday Problem**, a probability puzzle that demonstrates how the likelihood of a collision increases counterintuitively with more data points. The goal of this challenge is to process an image into a hash and find a collision where two different inputs produce the same hash, such that the resulting image remains visually unchanged when the hash is reversed.
+This solution is inspired by the [**Birthday Problem**](https://en.wikipedia.org/wiki/Birthday_problem), a probability puzzle that demonstrates how the likelihood of a collision increases counterintuitively with more data points. The goal of this solution is to process an image into a hash and find a collision where two different inputs produce the same hash, such that the resulting image remains visually unchanged when the hash is reversed.
 
-## **Approach**
+#### **Approach**
 1. **Hash Collision**: The program aims to modify the hash such that it matches the desired prefix with minimal visual changes to the image. This is achieved by altering non-visible components like:
    - **EXIF Data**: Metadata changes that don't affect the image visually.
    - **Least Significant Bits (LSBs)**: Slight pixel alterations that are imperceptible.
    - **Compression Artifacts**: Leveraging the JPEG format's lossy compression.
 
-2. **Trade-offs**:
+2. **Trade-offs Considered**:
    - **Search Space Size**: Computational complexity grows exponentially with prefix length.
    - **Computation Time**: The proof-of-concept performs one iteration to demonstrate feasibility.
-   - **Visual Fidelity**: Ensuring changes remain imperceptible.
+   - **Visual Fidelity**: Ensuring changes remain non-visible by altering the mentioned components.
 
-3. **Simulated Annealing**: This optimization technique explores the search space by:
+3. **Simulated Annealing**: This optimization technique was chosen as it explores the search space by:
    - Initially making broader, random changes.
    - Gradually narrowing modifications as it approaches the desired hash.
 
 4. **Theoretical Basis**:
+   -Using JPG/JPEG format for its tolerance to changes due to lossy compression
    - Using SHA-256 as the hash algorithm ensures:
      - Moderate speed.
-     - Strong collision resistance.
      - A manageable search space (e.g., 256 iterations for a 2-character prefix).
-
-## **Key Features**
-- **JPEG Format**: Chosen for its tolerance to imperceptible changes due to lossy compression.
-- **Metadata Editing**: Easy manipulation of EXIF data to tweak the hash.
-- **Proof of Concept**: Demonstrates collision creation with minimal runtime by performing a single iteration.
-
+     
 ---
-
-This solution highlights the trade-offs and challenges of balancing computational complexity, search space, and visual fidelity while achieving hash collisions effectively.
 
 
 ## Key Features
